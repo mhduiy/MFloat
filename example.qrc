@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/example">
-        <file alias="Main.qml">example/Main.qml</file>
-        <file alias="MButton.qml">src/imports/MFloat/Controls/MButton.qml</file>
-    </qresource>
-</RCC>

@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import "qrc:/example"
+import MFloat
 
 ApplicationWindow {
     width: 640

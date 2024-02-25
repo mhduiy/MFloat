@@ -2,29 +2,38 @@ cmake_minimum_required(VERSION 3.20)
 
 project(MFloat_Example VERSION 0.1 LANGUAGES CXX)
 
-#set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Quick)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
 
-#if(QT_VERSION VERSION_GREATER_EQUAL "6.3")
-#    qt_standard_project_setup()
-#else()
-    set(CMAKE_AUTOMOC ON)
-    set(CMAKE_AUTORCC ON)
-    set(CMAKE_AUTOUIC ON)
-#endif()
+# 无法成功编译资源文件，暂时换回老方法
+#qt_standard_project_setup()
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+set(resource_files
+    example.qrc
+)
+
+set(QT_SDK_DIR "${Qt${QT_VERSION_MAJOR}_DIR}")
+cmake_path(GET QT_SDK_DIR PARENT_PATH QT_SDK_DIR)
+cmake_path(GET QT_SDK_DIR PARENT_PATH QT_SDK_DIR)
+cmake_path(GET QT_SDK_DIR PARENT_PATH QT_SDK_DIR)
+
+set(QML_IMPORT_PATH qrc:/qt/qml)
 
 qt_add_executable(${PROJECT_NAME}
     main.cpp
 )
 
-target_include_directories(${PROJECT_NAME} PRIVATE
-${CMAKE_CURRENT_SOURCE_DIR}
+qt_add_qml_module(${PROJECT_NAME}
+    URI "MFloat_Example"
+    VERSION 1.0
+    QML_FILES Main.qml
+    RESOURCES ${resource_files}
+    RESOURCE_PREFIX "/"
 )
-
-target_sources(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/example.qrc)
-
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
@@ -37,10 +46,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt${QT_VERSION_MAJOR}::Core
     Qt${QT_VERSION_MAJOR}::Quick
-)
-
-install(TARGETS ${PROJECT_NAME}
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    mfloatui
 )
