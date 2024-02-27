@@ -45,6 +45,24 @@ ApplicationWindow {
             showText: true
             value: 30
         }
+
+        Row {
+            spacing: 10
+            MLabel {
+                text: "你好世界"
+                hMargin: 20
+                vMargin: 10
+                radius: 10
+            }
+            MLabel {
+                text: "MHDUIY"
+                rectColor: "#000000"
+                textColor: "#ffffff"
+                hMargin: 15
+                vMargin: 10
+                radius: 10
+            }
+        }
     }
 
 }
