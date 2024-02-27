@@ -8,20 +8,26 @@ ApplicationWindow {
     visible: true
     title: qsTr("MFloat_Example")
 
-    Row {
-        anchors.centerIn: parent
+    Column {
+        anchors.horizontalCenter: parent.horizontalCenter
         spacing: 10
-        MButton {
-            text: "普通按钮"
-            btnType:MButton.FBtnType.Ordinary
-        }
-        MButton {
-            text: "建议按钮"
-            btnType:MButton.FBtnType.Suggest
-        }
-        MButton {
-            text: "警告按钮"
-            btnType:MButton.FBtnType.Warning
+        Row {
+            spacing: 10
+            MButton {
+                text: "普通按钮"
+                btnType:MButton.FBtnType.Ordinary
+                onClicked: {
+                    bar.value = Math.floor(Math.random() * 100) + 1
+                }
+            }
+            MButton {
+                text: "建议按钮"
+                btnType:MButton.FBtnType.Suggest
+            }
+            MButton {
+                text: "警告按钮"
+                btnType:MButton.FBtnType.Warning
+            }
         }
 
         MSwitchButton {
@@ -33,5 +39,12 @@ ApplicationWindow {
                 }
             }
         }
+
+        MProgressBar {
+            id: bar
+            showText: true
+            value: 30
+        }
     }
+
 }

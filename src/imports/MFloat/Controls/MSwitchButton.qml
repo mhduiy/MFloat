@@ -55,7 +55,7 @@ Item {
                     target: thumb
                     from: 1.0
                     to: 0.6
-                    duration: 100
+                    duration: 80
                     property: "scale"
                 }
 
@@ -63,7 +63,7 @@ Item {
                     target: thumb
                     from: status ? 3 : thumb.parent.width - thumb.width
                     to: status ? thumb.parent.width - thumb.width - 3 : 3
-                    duration: 200
+                    duration: 150
                     property: "x"
                     easing.type: Easing.InOutCirc
                 }
@@ -72,7 +72,7 @@ Item {
                     target: thumb
                     from: 0.6
                     to: 1.0
-                    duration: 100
+                    duration: 80
                     property: "scale"
                 }
             }
