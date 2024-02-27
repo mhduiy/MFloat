@@ -6,7 +6,7 @@ ApplicationWindow {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("MFloat_Example")
 
     Row {
         anchors.centerIn: parent
@@ -22,6 +22,16 @@ ApplicationWindow {
         MButton {
             text: "警告按钮"
             btnType:MButton.FBtnType.Warning
+        }
+
+        MSwitchButton {
+            onStatusChanged: {
+                if (status) {
+                    console.log("Switch is ON");
+                } else {
+                    console.log("Switch is OFF");
+                }
+            }
         }
     }
 }

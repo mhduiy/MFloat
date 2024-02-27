@@ -22,6 +22,10 @@ Item {
     property alias btnType: btnRect.btnType
     signal clicked
 
+    ColorConstants {
+        id: colorConstants
+    }
+
     Rectangle {
         id: btnRect
         width: root.width
@@ -33,19 +37,19 @@ Item {
         property int mouseClickCenterX: 0
         property int mouseClickCenterY: 0
         property var backgroundColorMap: [
-            { key: MButton.FBtnType.Ordinary, value: "#E8E8E8"},
-            { key: MButton.FBtnType.Suggest, value: "#DBF2FF"},
-            { key: MButton.FBtnType.Warning, value: "#FFE7E7"}
+            { key: MButton.FBtnType.Ordinary, value: colorConstants.ordinaryBackColor},
+            { key: MButton.FBtnType.Suggest, value: colorConstants.suggestBackColor},
+            { key: MButton.FBtnType.Warning, value: colorConstants.warningBackColor}
         ]
         property var hoverColorMap: [
-            { key: MButton.FBtnType.Ordinary, value: "#AFAFAF"},
-            { key: MButton.FBtnType.Suggest, value: "#93D9FF"},
-            { key: MButton.FBtnType.Warning, value: "#FFA9A9"}
+            { key: MButton.FBtnType.Ordinary, value: colorConstants.ordinaryHoverColor},
+            { key: MButton.FBtnType.Suggest, value: colorConstants.suggestHoverColor},
+            { key: MButton.FBtnType.Warning, value: colorConstants.warningHoverColor}
         ]
         property var clickedColorMap: [
-            { key: MButton.FBtnType.Ordinary, value: "#000000"},
-            { key: MButton.FBtnType.Suggest, value: "#00A5FF"},
-            { key: MButton.FBtnType.Warning, value: "#D63E3E"}
+            { key: MButton.FBtnType.Ordinary, value: colorConstants.ordinaryClickedColor},
+            { key: MButton.FBtnType.Suggest, value: colorConstants.suggestClickedColor},
+            { key: MButton.FBtnType.Warning, value: colorConstants.warningClickedColor}
         ]
 
         color: {
