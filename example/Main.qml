@@ -63,6 +63,11 @@ ApplicationWindow {
                 radius: 10
             }
         }
+
+        MCheckBox {
+            // tristate: true
+            checkState: Qt.Unchecked
+        }
     }
 
 }
