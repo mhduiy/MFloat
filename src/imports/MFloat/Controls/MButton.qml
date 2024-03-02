@@ -15,8 +15,8 @@ Item {
         Clicked = 2
     }
 
-    width: 80
-    height: 35
+    width: 65
+    height: 30
 
     property alias text: label.text
     property alias btnType: btnRect.btnType
@@ -109,7 +109,7 @@ Item {
         Text {
             id: label
             anchors.centerIn: parent
-            font.pixelSize: 14
+            font.pixelSize: 12
             font.family: "黑体"
             color: btnRect.clickedColorMap[btnRect.btnType].value
         }

@@ -63,3 +63,5 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     Qt${QT_VERSION_MAJOR}::QuickPrivate
     Qt${QT_VERSION_MAJOR}::QmlPrivate
 )
+#安装
+install(DIRECTORY ${MFLOAT_QML_PLUGIN_DIRECTORY} DESTINATION ${CMAKE_INSTALL_PREFIX}/imports)
