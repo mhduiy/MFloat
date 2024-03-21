@@ -12,7 +12,7 @@ ApplicationWindow {
     MFrame {
         anchors.centerIn: parent
         width: 300
-        height: 300
+        height: 400
         ScrollView {
             anchors.fill: parent
             ScrollBar.vertical: ScrollBar {
@@ -123,6 +123,24 @@ ApplicationWindow {
                     MFrame {
                         height: 50
                         width: 100
+                    }
+
+                    Text {
+                        text: "MLineEdit 编辑框"
+                        font.family: "黑体"
+                        color: "#008c8c"
+                        font.pixelSize: 14
+                        font.bold: true
+                    }
+
+                    MLineEdit {
+                        width: 200
+                        placeholderText: "账号"
+                    }
+
+                    MLineEdit {
+                        width: 200
+                        placeholderText: "密码"
                     }
                 }
             }
