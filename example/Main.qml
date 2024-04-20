@@ -48,7 +48,7 @@ ApplicationWindow {
                             text: "发送通知"
                             btnType:MButton.FBtnType.Suggest
                             onClicked: {
-                                notificationBox.send("这是一个通知", MNotificationBox.Type.Info, 3000)
+                                notificationBox.send("这是一个通知", MNotificationBox.Type.Error, 3000)
                             }
                         }
                         MButton {

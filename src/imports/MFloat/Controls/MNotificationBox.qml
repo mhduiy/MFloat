@@ -2,8 +2,6 @@ import QtQuick
 
 Item {
     id: root
-    width: 300
-    height: 60
     anchors.horizontalCenter: parent.horizontalCenter
     y: 60
     z: 100
@@ -14,7 +12,7 @@ Item {
         Error = 2
     }
 
-    property var type: Type.Info
+    property var type: MNotificationBox.Type.Info
     function send(text, type, duration) {
         console.log(text, type, duration)
         if (duration <= 0) {
@@ -89,7 +87,7 @@ Item {
             PropertyChanges {
                 target: root
                 y: 60
-                width: 300
+                width: 350
                 height: 60
                 opacity: 1.0
             }
@@ -136,19 +134,47 @@ Item {
                 verticalAlignment: Text.AlignVCenter
             }
 
+            Image {
+                width: 30
+                height: 30
+                anchors.left: parent.left
+                anchors.leftMargin: 10
+                anchors.verticalCenter: parent.verticalCenter
+                asynchronous: true
+                sourceSize: Qt.size(2*width,2*height)
+                source: {
+                    if (type === MNotificationBox.Type.Info) {
+                        return "../images/successIcon.png"
+                    } else if (type === MNotificationBox.Type.Warning) {
+                        return "../images/warningIcon.png"
+                    } else {
+                        return "../images/errorIcon.png"
+                    }
+                }
+            }
+
             Rectangle {
-                height: 40
-                width: 40
+                height: 30
+                width: 30
                 anchors.right: parent.right
                 anchors.rightMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
+                radius: width / 2
                 Image {
                     anchors.fill: parent
                     source: "../images/closeIcon.png"
                 }
                 MouseArea {
+                    anchors.fill: parent
                     onClicked: {
-                        console.log("点击")
+                        root.state = "close"
+                        timer.stop()
+                    }
+                    onEntered: {
+                        parent.color = Qt.darker(parent.color, 1.2)
+                    }
+                    onExited: {
+                        parent.color = "white"
                     }
                 }
             }

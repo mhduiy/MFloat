@@ -25,14 +25,15 @@ foreach(filepath ${QML_PATHS})
 endforeach(filepath)
 
 # 遍历所有资源文件
-file(GLOB_RECURSE RES_PATHS *.qrc)
+file(GLOB_RECURSE RES_PATHS *.png *.jpg *.svg *.ico *.js)
 foreach(filepath ${RES_PATHS})
     string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" filename ${filepath})
     list(APPEND res_files ${filename})
 endforeach(filepath)
 
+
 # 在 Qt 的资源系统中为这些文件设置别名,设置后在qmldir中的路径才是正确的路径（参考FluentUI的设置方法）
-foreach(filepath IN LISTS qml_files resource_files)
+foreach(filepath IN LISTS qml_files res_files)
     string(REPLACE "imports/MFloat/" "" filename ${filepath})
     set_source_files_properties(${filepath} PROPERTIES QT_RESOURCE_ALIAS ${filename})
 endforeach()
