@@ -9,6 +9,10 @@ ApplicationWindow {
     visible: true
     title: qsTr("MFloat_Example")
 
+    MNotificationBox {
+        id: notificationBox
+    }
+
     MFrame {
         anchors.centerIn: parent
         width: 300
@@ -41,8 +45,11 @@ ApplicationWindow {
                             }
                         }
                         MButton {
-                            text: "建议按钮"
+                            text: "发送通知"
                             btnType:MButton.FBtnType.Suggest
+                            onClicked: {
+                                notificationBox.send("这是一个通知", MNotificationBox.Type.Info, 3000)
+                            }
                         }
                         MButton {
                             text: "警告按钮"

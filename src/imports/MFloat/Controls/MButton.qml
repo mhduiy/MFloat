@@ -20,6 +20,7 @@ Item {
 
     property alias text: label.text
     property alias btnType: btnRect.btnType
+    property int fontSize: 12
     signal clicked
 
     ColorConstants {
@@ -109,9 +110,11 @@ Item {
         Text {
             id: label
             anchors.centerIn: parent
-            font.pixelSize: 12
+            font.pixelSize: root.fontSize
             font.family: "黑体"
             color: btnRect.clickedColorMap[btnRect.btnType].value
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
         }
 
         Rectangle {

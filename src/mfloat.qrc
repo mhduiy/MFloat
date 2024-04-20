@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imports/MFloat/images/closeIcon.png</file>
+        <file>imports/MFloat/images/errorIcon.png</file>
+        <file>imports/MFloat/images/successIcon.png</file>
+        <file>imports/MFloat/images/warningIcon.png</file>
+    </qresource>
+</RCC>

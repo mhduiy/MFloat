@@ -2,7 +2,6 @@
 
 MFloatPlugin::MFloatPlugin()
 {
-
 }
 void MFloatPlugin::registerTypes(const char *uri)
 {
