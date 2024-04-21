@@ -19,7 +19,8 @@
 - [x] MLineEdit 行编辑框
 - [x] MProgressBar 进度条
 - [x] MSwitchButton 开关按钮
-- [ ] MNotificationBox      通知控件
+- [x] MNotificationBox      通知控件
+- [x] MLoadIndicator  加载动画指示器
 - [ ] MTitleBar 标题栏
 - [ ] MBlurEffectWidget 实时模糊窗体
 - [ ] MLineChart 折线图表

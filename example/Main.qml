@@ -45,16 +45,31 @@ ApplicationWindow {
                             }
                         }
                         MButton {
-                            text: "发送通知"
+                            text: "停止加载"
                             btnType:MButton.FBtnType.Suggest
                             onClicked: {
-                                notificationBox.send("这是一个通知", MNotificationBox.Type.Error, 3000)
+                                notificationBox.send("指示器停止加载", MNotificationBox.Type.Warning, 3000)
+                                loadIndicator.stop()
                             }
                         }
                         MButton {
-                            text: "警告按钮"
+                            text: "开始加载"
                             btnType:MButton.FBtnType.Warning
+                            onClicked: {
+                                notificationBox.send("指示器开始加载", MNotificationBox.Type.Info, 3000)
+                                loadIndicator.start()
+                            }
                         }
+                    }
+                    Text {
+                        text: "MLoadIndicator 加载动画指示器"
+                        font.family: "黑体"
+                        color: "#008c8c"
+                        font.pixelSize: 14
+                        font.bold: true
+                    }
+                    MLoadIndicator {
+                        id: loadIndicator
                     }
                     Text {
                         text: "MSwitchButton 开关按钮"
