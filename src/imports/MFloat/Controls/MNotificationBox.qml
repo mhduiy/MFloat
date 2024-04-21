@@ -8,13 +8,12 @@ Item {
 
     enum Type {
         Info = 0,
-        Waining = 1,
+        Warning = 1,
         Error = 2
     }
 
     property var type: MNotificationBox.Type.Info
     function send(text, type, duration) {
-        console.log(text, type, duration)
         if (duration <= 0) {
             return
         }
@@ -32,7 +31,6 @@ Item {
         repeat: false
         onTriggered: {
             root.state = "close"
-            console.log("通知关闭")
         }
     }
 
