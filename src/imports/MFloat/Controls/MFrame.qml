@@ -12,31 +12,7 @@ Rectangle {
 
     color: wrapperColor
     border.width: 1
-    radius: 5 * width / 100
+    radius: 10
     border.color: colorConstants.ordinaryHoverColor
-    opacity: 0
-
-    ParallelAnimation {
-        id: showAni
-        NumberAnimation {
-            target: root
-            property: "scale"
-            from: 0.8
-            to: 1
-            duration: 600
-            easing.type: Easing.OutCirc
-        }
-        PropertyAnimation {
-            target: root
-            property: "opacity"
-            from: 0
-            to: 1
-            duration: 600
-        }
-    }
-
-    Component.onCompleted: {
-        showAni.start()
-    }
-
+    opacity: 1
 }
