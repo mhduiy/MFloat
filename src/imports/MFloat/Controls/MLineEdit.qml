@@ -8,7 +8,7 @@ Item {
 
     id: root
 
-    property Item editItem: edit
+    property alias editItem: edit
     property string placeholderText: ""
 
     ColorConstants {
