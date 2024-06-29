@@ -65,9 +65,9 @@ set_target_properties(${LIB_NAME} PROPERTIES
 )
 
 target_link_libraries(${LIB_NAME} PUBLIC
-    Qt${QT_VERSION_MAJOR}::CorePrivate
-    Qt${QT_VERSION_MAJOR}::QuickPrivate
-    Qt${QT_VERSION_MAJOR}::QmlPrivate
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Quick
+    Qt${QT_VERSION_MAJOR}::Qml
 )
 
 # Install library

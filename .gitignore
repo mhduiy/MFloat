@@ -9,3 +9,4 @@ debian/*
 !debian/control
 !debian/rules
 obj-*-linux-gnu
+.cache

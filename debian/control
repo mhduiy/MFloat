@@ -5,15 +5,26 @@ Maintainer: mhduiy
 Build-Depends:
  debhelper-compat ( =12),
  cmake,
+ extra-cmake-modules,
  build-essential,
  qt6-base-dev,
  qt6-declarative-dev,
  qt6-base-dev-tools,
  qt6-tools-dev,
+ qtquickcontrols2-5-dev,
  qml6-module-qtquick-layouts,
  qml6-module-qtquick-window,
  qml6-module-qt-labs-platform,
- qml6-module-qtquick-controls2-styles-chameleon
+ libopengl-dev,
+ libgl-dev,
+ libxkbcommon-dev,
+ libxkbfile-dev,
+ libgl1-mesa-dev,
+ libglu1-mesa-dev,
+ mesa-common-dev,
+ libvulkan-dev,
+ libqt6opengl6-dev
+
 Standards-Version: 0.0.1
 
 
