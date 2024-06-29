@@ -58,6 +58,12 @@ qt_add_qml_module( ${LIB_NAME}
     OUTPUT_DIRECTORY "${PLUGIN_OUTPUT_DIR}/MFloat"
 )
 
+set_target_properties(${LIB_NAME} PROPERTIES
+    VERSION ${CMAKE_PROJECT_VERSION}
+    SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
+    EXPORT_NAME MFloat
+)
+
 target_link_libraries(${LIB_NAME} PUBLIC
     Qt${QT_VERSION_MAJOR}::CorePrivate
     Qt${QT_VERSION_MAJOR}::QuickPrivate

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(MFloat VERSION 0.1 LANGUAGES CXX)
+project(MFloat VERSION 0.1 DESCRIPTION "MFloat controls" LANGUAGES CXX)
 
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOMOC ON)

@@ -3,3 +3,9 @@ CMakeLists.txt.user*
 .idea
 .vscode
 cmake-*
+debian/*
+!debian/source/*
+!debian/changelog
+!debian/control
+!debian/rules
+obj-*-linux-gnu
